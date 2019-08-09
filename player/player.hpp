@@ -49,6 +49,10 @@ public:
         mile = 0;
         status = Stop;
         speed_limit_flag = false;
+        extra_tank = false;
+        driving_ace = false;
+        right_of_way = false;
+        puncture_proof = false;
     }
 
     int mile;
@@ -60,5 +64,10 @@ public:
     {
         std::cout << status << std::endl;
     }
+
+    bool extra_tank;
+    bool driving_ace;
+    bool right_of_way;
+    bool puncture_proof;
 };
 }  // namespace Player

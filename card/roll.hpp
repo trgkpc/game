@@ -9,14 +9,14 @@ struct Roll : AbstCard {
         name = std::string("Roll!!");
     }
 
-    void operator()(Player::Player& player)
+    void operator()(Player::Player& user, Player::Player& target)
     {
-        player.status = Player::PlayerStatus::Roll;
+        target.status = Player::PlayerStatus::Roll;
     }
 
-    bool check_available(const Player::Player& owner, const Player::Player& target)
+    bool check_available(const Player::Player& user, const Player::Player& target)
     {
-        if ((owner.id == target.id) && (target.status == Player::PlayerStatus::Stop)) {
+        if ((user.id == target.id) && (target.status == Player::PlayerStatus::Stop)) {
             return true;
         } else {
             return false;
