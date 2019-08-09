@@ -16,7 +16,7 @@ struct Stop : AbstCard {
 
     bool check_available(const Player::Player& user, const Player::Player& target)
     {
-        if ((user.id == target.id) && (target.status == Player::PlayerStatus::Roll)) {
+        if ((user.id != target.id) && (target.status == Player::PlayerStatus::Roll) && (target.driving_ace == false)) {
             return true;
         } else {
             return false;
