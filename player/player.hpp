@@ -62,7 +62,7 @@ public:
 
     void print_status()
     {
-        std::cout << status << std::endl;
+        std::cout << "player id:" << id << " is " << status << std::endl;
     }
 
     bool extra_tank;
