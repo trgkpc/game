@@ -81,6 +81,12 @@ public:
 
     void operator()(Driver::Driver& user, Driver::Driver& target)
     {
+        main(user, target);
+    }
+
+    void main(Driver::Driver& user, Driver::Driver& target)
+    {
+
         if (check_available(user, target)) {
             if (available_this_card(user, target)) {
                 exe(user, target);
@@ -102,7 +108,7 @@ public:
         return false;
     };
 
-    virtual void exe(Driver::Driver& user, Driver::Driver& target) = 0;
-    virtual bool available_this_card(const Driver::Driver& user, Driver::Driver& target) = 0;
+    virtual void exe(Driver::Driver& user, Driver::Driver& target){};
+    virtual bool available_this_card(const Driver::Driver& user, Driver::Driver& target) { return false; };
 };
 }  //namespace Card
