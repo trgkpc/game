@@ -14,7 +14,11 @@ struct RemediesCard : AbstCard {
 
     void exe(Player::Player& user, Player::Player& target)
     {
-        target.status = Player::PlayerStatus::Stop;
+        if (target.get_safeties_flag(Player::SafetiesKind::RightOfWay)) {
+            target.status = Player::PlayerStatus::Roll;
+        } else {
+            target.status = Player::PlayerStatus::Stop;
+        }
     }
 
     bool check_target_hazard(const Player::Player& player)
