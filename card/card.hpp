@@ -10,6 +10,32 @@
 
 namespace Card
 {
+DistanceCard make_25mile_card()
+{
+    return DistanceCard("25mile", 25);
+}
+
+DistanceCard make_50mile_card()
+{
+    return DistanceCard("50mile", 50);
+}
+
+DistanceCard make_75mile_card()
+{
+    return DistanceCard("75mile", 75);
+}
+
+
+DistanceCard make_100mile_card()
+{
+    return DistanceCard("100mile", 100);
+}
+
+DistanceCard make_200mile_card()
+{
+    return DistanceCard("200mile", 200);
+}
+
 HazardCard make_accident_card()
 {
     return HazardCard("Accident", Driver::DriverStatus::Accident, Driver::SafetiesKind::DrivingAce);
