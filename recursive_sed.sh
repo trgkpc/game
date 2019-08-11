@@ -1,5 +1,5 @@
 dir_names=("card" "player" "test")
-for dir_name in ${dir_names}
+for dir_name in ${dir_names[@]}
     do
     cd ${dir_name}
     file_names=`ls`
@@ -9,6 +9,7 @@ for dir_name in ${dir_names}
         sed s/Player/Driver/g tmp.cpp > ${file_name}
         rm tmp.cpp
     done
+    echo "${dir_name} done"
     cd ..
 done
 echo "Fin."
