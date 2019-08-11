@@ -26,7 +26,6 @@ DistanceCard make_75mile_card()
     return DistanceCard(distance_75, 75);
 }
 
-
 DistanceCard make_100mile_card()
 {
     return DistanceCard(distance_100, 100);
