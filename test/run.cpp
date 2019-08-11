@@ -21,6 +21,7 @@ int main()
     cout << endl;
 
     distance200(d1, d1);
+    cout << "d1 runed 200" << endl;
     d1.print_status();
     cout << endl;
 
