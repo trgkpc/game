@@ -6,15 +6,15 @@ namespace Card
 struct SafetiesCard : AbstCard {
     Player::SafetiesKind kind;
 
-    RemediesCard(const std::string& card_name, const Player::PlayerStatus& target_hazard)
-        : target_hazard(target_hazard)
+    SafetiesCard(const std::string& card_name, const Player::SafetiesKind& kind)
+        : kind(kind)
     {
         name = card_name;
     }
 
     void exe(Player::Player& user, Player::Player& target)
     {
-        target.set_safeties_kind(kind, true);
+        target.set_safeties_flag(kind, true);
         target.reflect_safeties_card();
     }
 

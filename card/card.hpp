@@ -1,6 +1,7 @@
 #pragma once
 #include "hazard_card.hpp"
 #include "remedies_card.hpp"
+#include "safeties_card.hpp"
 
 namespace Card
 {
@@ -17,5 +18,10 @@ RemediesCard make_repair_card()
 HazardCard make_stop_card()
 {
     return HazardCard("Stop", Player::PlayerStatus::Stop, Player::SafetiesKind::RightOfWay);
+}
+
+SafetiesCard make_right_of_way_card()
+{
+    return SafetiesCard("Right Of Way", Player::SafetiesKind::RightOfWay);
 }
 }  // namespace Card

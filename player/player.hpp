@@ -93,6 +93,10 @@ public:
     void print_status()
     {
         std::cout << "[[Message]] player id: " << id << " status: " << status << " mile: " << mile << std::endl;
+        for (int i = 0; i < 4; i++) {
+            std::cout << "    " << static_cast<SafetiesKind>(i) << ": " << safeties_flag.at(i) << std::endl;
+        }
+        std::cout << "SpeedLimitFlag: " << speed_limit_flag << std::endl;
     }
 
     void run(const int& distance)
@@ -136,6 +140,33 @@ public:
         }
     }
 
+    void reflect_safeties_card()
+    {
+        if (safeties_flag.at(ExtraTank)) {
+            if (status = OutOfGas) {
+                status = Stop;
+            }
+        }
+
+        if (safeties_flag.at(PunctureProof)) {
+            if (status == FlatTire) {
+                status = Stop;
+            }
+        }
+
+        if (safeties_flag.at(DrivingAce)) {
+            if (status == Accident) {
+                status = Stop;
+            }
+        }
+
+        if (safeties_flag.at(RightOfWay)) {
+            if (status == Stop) {
+                status = Roll;
+            }
+            speed_limit_flag = false;
+        }
+    }
 
 private:
     int mile;
