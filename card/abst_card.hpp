@@ -19,19 +19,23 @@ public:
 
     void operator()(Driver::Driver& user, Driver::Driver& target)
     {
-        if (this->check_available(user, target)) {
-            exe(user, target);
+        if (check_available(user, target)) {
+            if (available_this_card(user, target)) {
+                exe(user, target);
+            } else {
+                std::cerr << "[[Error]] " << name << " card was intended to use in invalid situation" << std::endl;
+            }
         } else {
-            std::cerr << "[[Error]] " << name << " card is unavailable but intended to use" << std::endl;
+            std::cerr << "[[Error]] " << name << " card was intended to use for invalid target" << std::endl;
         }
     }
 
     bool check_available(const Driver::Driver& user, Driver::Driver& target)
     {
         if (attribute == Distance || attribute == Remedies || attribute == Safeties) {
-            return (user.id == target.id) && available_this_card(user, target);
+            return (user.id == target.id);
         } else if (attribute == Hazards) {
-            return (user.id != target.id) && available_this_card(user, target);
+            return (user.id != target.id);
         }
         return false;
     };
