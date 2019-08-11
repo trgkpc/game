@@ -17,7 +17,7 @@ struct SpeedLimit : AbstCard {
 
     bool available_this_card(const Player::Player& user, Player::Player& target)
     {
-        if (!target.speed_limit_flag) {
+        if (target.get_safeties_flag(Player::SafetiesKind::RightOfWay) == false && !target.speed_limit_flag) {
             return true;
         } else {
             return false;
