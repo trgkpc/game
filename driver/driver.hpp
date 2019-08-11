@@ -109,6 +109,11 @@ public:
         return limit - mile;
     }
 
+    int get_mile()
+    {
+        return mile;
+    }
+
     bool can_run(const int& distance)
     {
         return (status == Roll || (status == Stop && safeties_flag.at(RightOfWay))) && mile + distance <= limit && (!speed_limit_flag || distance <= speed_limit);
