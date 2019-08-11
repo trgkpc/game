@@ -1,9 +1,9 @@
 #pragma once
-#include "abst_card.hpp"
+#include "abst_hazard_card.hpp"
 
 namespace Card
 {
-struct Stop : AbstCard {
+struct Stop : AbstHazardCard {
     Stop()
     {
         name = std::string("Stop");
@@ -14,13 +14,9 @@ struct Stop : AbstCard {
         target.status = Player::PlayerStatus::Stop;
     }
 
-    bool check_available(const Player::Player& user, const Player::Player& target)
+    bool safeties_flag(const Player::Player& player)
     {
-        if ((user.id != target.id) && (target.status == Player::PlayerStatus::Roll) && (target.driving_ace == false)) {
-            return true;
-        } else {
-            return false;
-        }
+        return player.right_of_way;
     }
 };
 }  // namespace Card
