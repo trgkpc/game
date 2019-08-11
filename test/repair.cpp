@@ -9,11 +9,12 @@ int main()
 {
     Player::Player p1(1);
     Player::Player p2(2);
-    auto repair = Card::Repair();
-    auto accident = Card::Accident();
+    auto repair = Card::make_repair_card();
+    //    auto accident = Card::Accident();
 
     p1.print_status();
-    accident(p2, p1);
+    //    accident(p2, p1);
+    p1.status = Player::PlayerStatus::Accident;
     cout << "p2 used acccident card on p1" << endl;
     p1.print_status();
     cout << endl;

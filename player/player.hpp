@@ -81,12 +81,12 @@ public:
         return limit - mile;
     }
 
-    int extend()
+    void extend()
     {
         limit = 1300;
     }
 
-    bool safeties_flag(const Player::SafetiesKind& kind)
+    bool get_safeties_flag(const SafetiesKind& kind)
     {
         switch (kind) {
         case ExtraTank:
@@ -102,7 +102,7 @@ public:
             return puncture_proof;
             break;
         default:
-            cerr << "[[Error]] player(id:" << id << ") has no safeties_flag Kind " << kind << endl;
+            std::cerr << "[[Error]] player(id:" << id << ") has no safeties_flag Kind " << kind << std::endl;
             return false;
         }
     }

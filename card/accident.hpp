@@ -16,9 +16,9 @@ public:
     }
 
 
-    bool safeties_flag(const Player::Player& player)
+    bool safeties_flag(Player::Player& player)
     {
-        return player.driving_ace;
+        return player.get_safeties_flag(Player::SafetiesKind::DrivingAce);
     }
 };
 }  // namespace Card
