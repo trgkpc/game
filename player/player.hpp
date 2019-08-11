@@ -1,5 +1,7 @@
 #pragma once
+#include <array>
 #include <iostream>
+using std::array;
 
 namespace Player
 {
@@ -10,14 +12,6 @@ enum PlayerStatus {
     OutOfGas = 3,
     FlatTire = 4,
 };
-enum SafetiesKind {
-    ExtraTank = 0,
-    DrivingAce = 1,
-    RightOfWay = 2,
-    PunctureProof = 3,
-};
-constexpr int speed_limit = 75;
-
 using std::ostream;
 ostream& operator<<(ostream& os, const PlayerStatus st)
 {
@@ -38,11 +32,41 @@ ostream& operator<<(ostream& os, const PlayerStatus st)
         os << "Flat Tire";
         break;
     default:
-        os << "[Error] PlayerStatus error";
+        os << "[[Error]] PlayerStatus error";
         break;
     }
     return os;
 }
+
+enum SafetiesKind {
+    ExtraTank = 0,
+    DrivingAce = 1,
+    RightOfWay = 2,
+    PunctureProof = 3,
+};
+ostream& operator<<(ostream& os, const SafetiesKind& kind)
+{
+    switch (kind) {
+    case ExtraTank:
+        os << "Extra Tank";
+        break;
+    case DrivingAce:
+        os << "Driving Ace";
+        break;
+    case RightOfWay:
+        os << "Right of Way";
+        break;
+    case PunctureProof:
+        os << "Puncture Proof";
+        break;
+    default:
+        os << "[[Error]] SafetiesKind not exit";
+        break;
+    }
+    return os;
+}
+
+constexpr int speed_limit = 75;
 
 struct Player {
 public:
@@ -57,10 +81,9 @@ public:
         limit = 1000;
         status = Stop;
         speed_limit_flag = false;
-        extra_tank = false;
-        driving_ace = false;
-        right_of_way = false;
-        puncture_proof = false;
+        for (int i = 0; i < 4; i++) {
+            safeties_flag.at(i) = false;
+        }
     }
 
     int id;
@@ -84,7 +107,7 @@ public:
 
     bool can_run(const int& distance)
     {
-        return (status == Roll || (status == Stop && right_of_way)) && mile + distance <= limit && (!speed_limit_flag || distance <= speed_limit);
+        return (status == Roll || (status == Stop && safeties_flag.at(RightOfWay))) && mile + distance <= limit && (!speed_limit_flag || distance <= speed_limit);
     }
 
     void extend()
@@ -94,22 +117,22 @@ public:
 
     bool get_safeties_flag(const SafetiesKind& kind)
     {
-        switch (kind) {
-        case ExtraTank:
-            return extra_tank;
-            break;
-        case DrivingAce:
-            return driving_ace;
-            break;
-        case RightOfWay:
-            return right_of_way;
-            break;
-        case PunctureProof:
-            return puncture_proof;
-            break;
-        default:
-            std::cerr << "[[Error]] player(id:" << id << ") has no safeties_flag Kind " << kind << std::endl;
+        int index = static_cast<int>(kind);
+        if (index >= 0 && index < 4) {
+            return safeties_flag.at(index);
+        } else {
+            std::cerr << "[[Error]] SafetiesKind out of index" << std::endl;
             return false;
+        }
+    }
+
+    void set_safeties_flag(const SafetiesKind& kind, bool flag)
+    {
+        int index = static_cast<int>(kind);
+        if (index >= 0 && index < 4) {
+            safeties_flag.at(index) = flag;
+        } else {
+            std::cerr << "[[Error]] SafetiesKind out of index" << std::endl;
         }
     }
 
@@ -117,9 +140,6 @@ public:
 private:
     int mile;
     int limit;
-    bool extra_tank;
-    bool driving_ace;
-    bool right_of_way;
-    bool puncture_proof;
+    array<bool, 4> safeties_flag;
 };
 }  // namespace Player
