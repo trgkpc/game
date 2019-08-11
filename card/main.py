@@ -18,7 +18,7 @@ def main(lines):
     print("std::shared_ptr<",typename,"> ",funcname,end="",sep="")
     print("{")
     kakko = lines[2].split("(")[1]
-    print("    return std::make_shared<",typename,"(",kakko,end="",sep="")
+    print("    return std::make_shared<",typename,">(",kakko,end="",sep="")
     print("}")
 dat_file = open("card.hpp","r")
 start_flag = 0
