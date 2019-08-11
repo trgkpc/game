@@ -9,6 +9,7 @@ struct DistanceCard : AbstCard {
         : distance(distance)
     {
         name = card_name;
+        attribute = Distance;
     }
 
     bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
