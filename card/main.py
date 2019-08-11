@@ -28,13 +28,13 @@ for line in dat_file:
         start_flag = 1
     if start_flag > 0:
         if "/**" in line:
-            print(line)
+            print(line,end="")
             continue
         lines.append(line)
         if len(lines) >= 5:
             main(lines)
             lines = []
-            print(line)
+            print(line,end="")
             #fi
         #fi
     else:
