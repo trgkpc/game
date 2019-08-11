@@ -28,8 +28,8 @@ public:
 
     bool check_available(const Player::Player& user, Player::Player& target)
     {
-        if (attriute == Distance || attribute == Remedies || attribute == Safeties) {
-            return (use.id == target.id) && available_this_card(user, target);
+        if (attribute == Distance || attribute == Remedies || attribute == Safeties) {
+            return (user.id == target.id) && available_this_card(user, target);
         } else if (attribute == Hazards) {
             return (user.id != target.id) && available_this_card(user, target);
         }

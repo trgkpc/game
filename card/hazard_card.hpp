@@ -12,7 +12,7 @@ public:
         : hazard(hazard), safeties(safeties)
     {
         name = card_name;
-        attribute = Hazard;
+        attribute = Hazards;
     }
 
     void exe(Player::Player& user, Player::Player& target)
