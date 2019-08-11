@@ -1,8 +1,4 @@
 #include "../card/card.hpp"
-#include "../card/distance_card.hpp"
-#include "../card/end_of_limit.hpp"
-#include "../card/roll.hpp"
-#include "../card/speed_limit.hpp"
 #include "../player/player.hpp"
 #include <iostream>
 using namespace std;
