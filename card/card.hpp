@@ -12,47 +12,47 @@ namespace Card
 {
 DistanceCard make_25mile_card()
 {
-    return DistanceCard("25mile", 25);
+    return DistanceCard(distance_25, 25);
 }
 
 DistanceCard make_50mile_card()
 {
-    return DistanceCard("50mile", 50);
+    return DistanceCard(distance_50, 50);
 }
 
 DistanceCard make_75mile_card()
 {
-    return DistanceCard("75mile", 75);
+    return DistanceCard(distance_75, 75);
 }
 
 
 DistanceCard make_100mile_card()
 {
-    return DistanceCard("100mile", 100);
+    return DistanceCard(distance_100, 100);
 }
 
 DistanceCard make_200mile_card()
 {
-    return DistanceCard("200mile", 200);
+    return DistanceCard(distance_200, 200);
 }
 
 HazardCard make_accident_card()
 {
-    return HazardCard("Accident", Driver::DriverStatus::Accident, Driver::SafetiesKind::DrivingAce);
+    return HazardCard(accident, Driver::DriverStatus::Accident, Driver::SafetiesKind::DrivingAce);
 }
 
 RemediesCard make_repair_card()
 {
-    return RemediesCard("Repair", Driver::DriverStatus::Accident);
+    return RemediesCard(repair, Driver::DriverStatus::Accident);
 }
 
 HazardCard make_stop_card()
 {
-    return HazardCard("Stop", Driver::DriverStatus::Stop, Driver::SafetiesKind::RightOfWay);
+    return HazardCard(stop, Driver::DriverStatus::Stop, Driver::SafetiesKind::RightOfWay);
 }
 
 SafetiesCard make_right_of_way_card()
 {
-    return SafetiesCard("Right Of Way", Driver::SafetiesKind::RightOfWay);
+    return SafetiesCard(right_of_way, Driver::SafetiesKind::RightOfWay);
 }
 }  // namespace Card

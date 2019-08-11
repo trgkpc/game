@@ -6,7 +6,7 @@ namespace Card
 struct SpeedLimit : AbstCard {
     SpeedLimit()
     {
-        name = std::string("Speed Limit");
+        kind = speed_limit;
         attribute = Hazards;
     }
 

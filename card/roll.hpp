@@ -6,7 +6,7 @@ namespace Card
 struct Roll : AbstCard {
     Roll()
     {
-        name = std::string("Roll!!");
+        kind = roll;
         attribute = Remedies;
     }
 

@@ -6,10 +6,9 @@ namespace Card
 struct RemediesCard : AbstCard {
     Driver::DriverStatus target_hazard;
 
-    RemediesCard(const std::string& card_name, const Driver::DriverStatus& target_hazard)
-        : target_hazard(target_hazard)
+    RemediesCard(const Kind& kind, const Driver::DriverStatus& target_hazard)
+        : kind(kind), target_hazard(target_hazard)
     {
-        name = card_name;
         attribute = Remedies;
     }
 

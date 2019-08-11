@@ -8,10 +8,9 @@ public:
     Driver::DriverStatus hazard;
     Driver::SafetiesKind safeties;
 
-    HazardCard(const std::string& card_name, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties)
-        : hazard(hazard), safeties(safeties)
+    HazardCard(const Kind& kind, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties)
+        : kind(kind), hazard(hazard), safeties(safeties)
     {
-        name = card_name;
         attribute = Hazards;
     }
 

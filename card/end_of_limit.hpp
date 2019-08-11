@@ -6,7 +6,7 @@ namespace Card
 struct EndOfLimit : AbstCard {
     EndOfLimit()
     {
-        name = std::string("Speed Limit");
+        kind = end_of_limit;
         attribute = Remedies;
     }
 
