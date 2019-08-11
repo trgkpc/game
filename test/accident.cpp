@@ -5,30 +5,30 @@ using namespace std;
 
 int main()
 {
-    Driver::Driver p1(1);
-    Driver::Driver p2(2);
+    Driver::Driver d1(1);
+    Driver::Driver d2(2);
     auto accident = Card::make_accident_card();
     auto roll = Card::Roll();
 
     cout << "initialized" << endl;
 
-    roll(p1, p1);
-    cout << "p1 used roll card" << endl;
-    p1.print_status();
+    roll(d1, d1);
+    cout << "d1 used roll card" << endl;
+    d1.print_status();
     cout << endl;
 
-    accident(p1, p1);
-    cout << "p1 intendet to use accident card on itseld, but failed" << endl;
-    p1.print_status();
+    accident(d1, d1);
+    cout << "d1 intendet to use accident card on itseld, but failed" << endl;
+    d1.print_status();
     cout << endl;
 
-    accident(p2, p1);
-    cout << "p2 used accident card on p1" << endl;
-    p1.print_status();
+    accident(d2, d1);
+    cout << "d2 used accident card on d1" << endl;
+    d1.print_status();
     cout << endl;
 
-    p2.print_status();
-    accident(p1, p2);
-    cout << "p1 used accident card on p2" << endl;
-    p2.print_status();
+    d2.print_status();
+    accident(d1, d2);
+    cout << "d1 used accident card on d2" << endl;
+    d2.print_status();
 }

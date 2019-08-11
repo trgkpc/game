@@ -5,28 +5,28 @@ using namespace std;
 
 int main()
 {
-    Driver::Driver p1(1);
+    Driver::Driver d1(1);
     auto roll = Card::Roll();
     auto distance25 = Card::DistanceCard("25mile", 25);
     auto distance200 = Card::DistanceCard("200mile", 200);
 
-    roll(p1, p1);
-    cout << "p1 used roll" << endl;
-    p1.print_status();
+    roll(d1, d1);
+    cout << "d1 used roll" << endl;
+    d1.print_status();
     cout << endl;
 
-    distance25(p1, p1);
-    cout << "p1 runed 25" << endl;
-    p1.print_status();
+    distance25(d1, d1);
+    cout << "d1 runed 25" << endl;
+    d1.print_status();
     cout << endl;
 
-    distance200(p1, p1);
-    p1.print_status();
+    distance200(d1, d1);
+    d1.print_status();
     cout << endl;
 
-    p1.speed_limit_flag = true;
-    distance200(p1, p1);
-    cout << "p1 tried to run 200, but failed." << endl;
-    p1.print_status();
+    d1.speed_limit_flag = true;
+    distance200(d1, d1);
+    cout << "d1 tried to run 200, but failed." << endl;
+    d1.print_status();
     cout << endl;
 }

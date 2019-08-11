@@ -5,16 +5,16 @@ using namespace std;
 
 int main()
 {
-    Driver::Driver p1(1);
-    Driver::Driver p2(2);
+    Driver::Driver d1(1);
+    Driver::Driver d2(2);
     auto roll = Card::Roll();
 
-    p1.print_status();
-    cout << "check_available(p1,p1):" << roll.check_available(p1, p1) << endl;
+    d1.print_status();
+    cout << "check_available(d1,d1):" << roll.check_available(d1, d1) << endl;
 
-    roll(p1, p1);
+    roll(d1, d1);
 
-    p1.print_status();
-    cout << "check_available(p1,p1):" << roll.check_available(p1, p1) << endl;
-    cout << "check_available(p1,p2):" << roll.check_available(p1, p2) << endl;
+    d1.print_status();
+    cout << "check_available(d1,d1):" << roll.check_available(d1, d1) << endl;
+    cout << "check_available(d1,d2):" << roll.check_available(d1, d2) << endl;
 }

@@ -5,22 +5,22 @@ using namespace std;
 
 int main()
 {
-    Driver::Driver p1(1);
-    Driver::Driver p2(2);
+    Driver::Driver d1(1);
+    Driver::Driver d2(2);
     auto stop = Card::make_stop_card();
     auto roll = Card::Roll();
-    roll(p1, p1);
-    cout << "p1 used roll" << endl;
-    p1.print_status();
+    roll(d1, d1);
+    cout << "d1 used roll" << endl;
+    d1.print_status();
     cout << endl;
 
-    stop(p2, p1);
-    cout << "p2 used stop card on p1" << endl;
-    p1.print_status();
+    stop(d2, d1);
+    cout << "d2 used stop card on d1" << endl;
+    d1.print_status();
     cout << endl;
 
-    stop(p2, p1);
-    cout << "p2 intended to use stop card on p1, but failed" << endl;
-    p1.print_status();
+    stop(d2, d1);
+    cout << "d2 intended to use stop card on d1, but failed" << endl;
+    d1.print_status();
     cout << endl;
 }
