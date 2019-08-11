@@ -7,7 +7,11 @@
 #    return std::make_shared<Card::DistanceCard>(Card::distance_25, 25);
 #}
 
+n = 1
 def main(lines):
+    if n == 10:
+        print("#include <memor>")
+        print("#include <vector>")
     #line 1
     typename = lines[0].split(" ")[0]
     funcname = lines[0].split(" ")[1]
@@ -35,4 +39,4 @@ for line in dat_file:
         #fi
     else:
         print(line,end="")
-
+    n += 1
