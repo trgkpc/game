@@ -5,6 +5,11 @@
 #include <vector>
 using namespace std;
 
+std::shared_ptr<Card::DistanceCard> hoge()
+{
+    return std::make_shared<Card::DistanceCard>(Card::distance_25, 25);
+}
+
 int main()
 {
     Driver::Driver d1(1);
@@ -17,7 +22,7 @@ int main()
     d1.print_status();
     cout << endl;
 
-    cards[0] = std::make_shared<Card::DistanceCard>(Card::distance_25, 25);
+    cards[0] = hoge();  //std::make_shared<Card::DistanceCard>(Card::distance_25, 25);
     cards[0]->main(d1, d1);
     d1.print_status();
 }
