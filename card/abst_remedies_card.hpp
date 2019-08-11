@@ -4,14 +4,14 @@
 namespace Card
 {
 struct AbstRemediesCard : AbstCard {
-    Player::Player& target_hazard;
-
     bool check_available(const Player::Player& user, const Player::Player& target)
     {
-        if (user.id == target.id && (target.status == target_hazard)) {
+        if (user.id == target.id && check_target_hazard(target)) {
             return true;
         }
         return false;
     }
+
+    virtual bool check_target_hazard(const Player::Player& player) = 0;
 };
 }  // namespace Card
