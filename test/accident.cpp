@@ -8,16 +8,28 @@ int main()
 {
     Player::Player p1(1);
     Player::Player p2(2);
-    auto card = Card::Accident();
+    auto accident = Card::Accident();
     auto roll = Card::Roll();
+
+    cout << "initialized" << endl;
+
     roll(p1, p1);
-
+    cout << "p1 used roll card" << endl;
     p1.print_status();
-    cout << "check_available(p2,p1):" << card.check_available(p2, p1) << endl;
+    cout << endl;
 
-    card(p2, p1);
-
+    accident(p1, p1);
+    cout << "p1 intendet to use accident card on itseld, but failed" << endl;
     p1.print_status();
-    cout << "check_available(p1,p1):" << card.check_available(p1, p1) << endl;
-    cout << "check_available(p2,p1):" << card.check_available(p2, p1) << endl;
+    cout << endl;
+
+    accident(p2, p1);
+    cout << "p2 used accident card on p1" << endl;
+    p1.print_status();
+    cout << endl;
+
+    p2.print_status();
+    accident(p1, p2);
+    cout << "p1 used accident card on p2" << endl;
+    p2.print_status();
 }
