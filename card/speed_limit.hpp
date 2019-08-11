@@ -3,21 +3,21 @@
 
 namespace Card
 {
-struct Roll : AbstCard {
-    Roll()
+struct SpeedLimit : AbstCard {
+    SpeedLimit()
     {
-        name = std::string("Roll!!");
-        attribute = Remedies;
+        name = std::string("Speed Limit");
+        attribute = Hazards;
     }
 
     void exe(Player::Player& user, Player::Player& target)
     {
-        target.status = Player::PlayerStatus::Roll;
+        target.speed_limit_flag = true;
     }
 
     bool available_this_card(const Player::Player& user, Player::Player& target)
     {
-        if (target.status == Player::PlayerStatus::Stop) {
+        if (!target.speed_limit_flag) {
             return true;
         } else {
             return false;

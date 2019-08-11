@@ -11,9 +11,9 @@ struct DistanceCard : AbstCard {
         name = card_name;
     }
 
-    bool check_available(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Player::Player& user, Player::Player& target)
     {
-        if (user.id == target.id && target.can_run(distance)) {
+        if (target.can_run(distance)) {
             return true;
         }
         return false;

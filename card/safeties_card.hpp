@@ -10,6 +10,7 @@ struct SafetiesCard : AbstCard {
         : kind(kind)
     {
         name = card_name;
+        attribute = Safeties;
     }
 
     void exe(Player::Player& user, Player::Player& target)
@@ -18,9 +19,9 @@ struct SafetiesCard : AbstCard {
         target.reflect_safeties_card();
     }
 
-    bool check_available(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Player::Player& user, Player::Player& target)
     {
-        if (user.id == target.id && !target.get_safeties_flag(kind)) {
+        if (!target.get_safeties_flag(kind)) {
             return true;
         }
         return false;

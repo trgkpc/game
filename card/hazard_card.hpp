@@ -12,6 +12,7 @@ public:
         : hazard(hazard), safeties(safeties)
     {
         name = card_name;
+        attribute = Hazard;
     }
 
     void exe(Player::Player& user, Player::Player& target)
@@ -19,9 +20,9 @@ public:
         target.status = hazard;
     }
 
-    bool check_available(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Player::Player& user, Player::Player& target)
     {
-        if (user.id != target.id && (target.status == Player::PlayerStatus::Stop || target.status == Player::PlayerStatus::Roll) && target.status != hazard && target.get_safeties_flag(safeties) == false) {
+        if ((target.status == Player::PlayerStatus::Stop || target.status == Player::PlayerStatus::Roll) && target.status != hazard && target.get_safeties_flag(safeties) == false) {
             return true;
         }
         return false;

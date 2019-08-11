@@ -10,6 +10,7 @@ struct RemediesCard : AbstCard {
         : target_hazard(target_hazard)
     {
         name = card_name;
+        attribute = Remedies;
     }
 
     void exe(Player::Player& user, Player::Player& target)
@@ -21,14 +22,9 @@ struct RemediesCard : AbstCard {
         }
     }
 
-    bool check_target_hazard(const Player::Player& player)
+    bool available_this_card(const Player::Player& user, Player::Player& target)
     {
-        return player.status == Player::PlayerStatus::Accident;
-    }
-
-    bool check_available(const Player::Player& user, Player::Player& target)
-    {
-        if (user.id == target.id && target.status == target_hazard) {
+        if (target.status == target_hazard) {
             return true;
         }
         return false;
