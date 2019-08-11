@@ -16,6 +16,7 @@ enum SafetiesKind {
     RightOfWay = 2,
     PunctureProof = 3,
 };
+constexpr int speed_limit = 75;
 
 using std::ostream;
 ostream& operator<<(ostream& os, const PlayerStatus st)
@@ -68,7 +69,7 @@ public:
 
     void print_status()
     {
-        std::cout << "[[Message]] player(id:" << id << ") is " << status << std::endl;
+        std::cout << "[[Message]] player id: " << id << " status: " << status << " mile: " << mile << std::endl;
     }
 
     void run(const int& distance)
@@ -79,6 +80,11 @@ public:
     int get_remaining()
     {
         return limit - mile;
+    }
+
+    bool can_run(const int& distance)
+    {
+        return (status == Roll || (status == Stop && right_of_way)) && mile + distance <= limit && (!speed_limit_flag || distance <= speed_limit);
     }
 
     void extend()

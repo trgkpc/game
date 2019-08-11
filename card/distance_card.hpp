@@ -3,16 +3,25 @@
 
 namespace Card
 {
-struct AbstRemediesCard : AbstCard {
-    int distance = 25;
+struct DistanceCard : AbstCard {
+    int distance;
+    DistanceCard(const std::string& card_name, const int distance)
+        : distance(distance)
+    {
+        name = card_name;
+    }
+
     bool check_available(const Player::Player& user, Player::Player& target)
     {
-        if (user.id == target.id && check_remaining() == true) {
+        if (user.id == target.id && target.can_run(distance)) {
             return true;
         }
         return false;
     }
 
-    virtual bool check_target_hazard(const Player::Player& player) = 0;
+    void exe(Player::Player& user, Player::Player& target)
+    {
+        target.run(distance);
+    }
 };
 }  // namespace Card
