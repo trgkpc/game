@@ -9,20 +9,22 @@ int main()
 {
     Player::Player p1(1);
     Player::Player p2(2);
-    auto card = Card::Repair();
+    auto repair = Card::Repair();
     auto accident = Card::Accident();
-    auto roll = Card::Roll();
-    roll(p1, p1);
 
     p1.print_status();
-    cout << "check_available(p1,p1):" << card.check_available(p1, p1) << endl;
-
     accident(p2, p1);
-
+    cout << "p2 used acccident card on p1" << endl;
     p1.print_status();
-    cout << "check_available(p1,p1):" << card.check_available(p1, p1) << endl;
-    cout << "check_available(p1,p2):" << card.check_available(p1, p2) << endl;
+    cout << endl;
 
-    card(p1, p1);
+    repair(p2, p1);
+    cout << "p2 intended to repair p1, but failed" << endl;
     p1.print_status();
+    cout << endl;
+
+    repair(p1, p1);
+    cout << "p1 repaired p1" << endl;
+    p1.print_status();
+    cout << endl;
 }
