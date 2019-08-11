@@ -1,5 +1,5 @@
+#include "../card/card.hpp"
 #include "../card/roll.hpp"
-#include "../card/stop.hpp"
 #include "../player/player.hpp"
 #include <iostream>
 using namespace std;
