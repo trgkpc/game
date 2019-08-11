@@ -4,25 +4,25 @@
 namespace Card
 {
 struct RemediesCard : AbstCard {
-    Player::PlayerStatus target_hazard;
+    Driver::DriverStatus target_hazard;
 
-    RemediesCard(const std::string& card_name, const Player::PlayerStatus& target_hazard)
+    RemediesCard(const std::string& card_name, const Driver::DriverStatus& target_hazard)
         : target_hazard(target_hazard)
     {
         name = card_name;
         attribute = Remedies;
     }
 
-    void exe(Player::Player& user, Player::Player& target)
+    void exe(Driver::Driver& user, Driver::Driver& target)
     {
-        if (target.get_safeties_flag(Player::SafetiesKind::RightOfWay)) {
-            target.status = Player::PlayerStatus::Roll;
+        if (target.get_safeties_flag(Driver::SafetiesKind::RightOfWay)) {
+            target.status = Driver::DriverStatus::Roll;
         } else {
-            target.status = Player::PlayerStatus::Stop;
+            target.status = Driver::DriverStatus::Stop;
         }
     }
 
-    bool available_this_card(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
     {
         if (target.status == target_hazard) {
             return true;

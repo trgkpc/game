@@ -3,9 +3,9 @@
 #include <iostream>
 using std::array;
 
-namespace Player
+namespace Driver
 {
-enum PlayerStatus {
+enum DriverStatus {
     Roll = 0,
     Stop = 1,
     Accident = 2,
@@ -13,7 +13,7 @@ enum PlayerStatus {
     FlatTire = 4,
 };
 using std::ostream;
-ostream& operator<<(ostream& os, const PlayerStatus st)
+ostream& operator<<(ostream& os, const DriverStatus st)
 {
     switch (st) {
     case Roll:
@@ -32,7 +32,7 @@ ostream& operator<<(ostream& os, const PlayerStatus st)
         os << "Flat Tire";
         break;
     default:
-        os << "[[Error]] PlayerStatus error";
+        os << "[[Error]] DriverStatus error";
         break;
     }
     return os;
@@ -68,9 +68,9 @@ ostream& operator<<(ostream& os, const SafetiesKind& kind)
 
 constexpr int speed_limit = 75;
 
-struct Player {
+struct Driver {
 public:
-    Player(int id) : id(id)
+    Driver(int id) : id(id)
     {
         init();
     }
@@ -87,12 +87,12 @@ public:
     }
 
     int id;
-    PlayerStatus status;
+    DriverStatus status;
     bool speed_limit_flag;
 
     void print_status()
     {
-        std::cout << "[[Message]] player id: " << id << " status: " << status << " mile: " << mile << std::endl;
+        std::cout << "[[Message]] driver id: " << id << " status: " << status << " mile: " << mile << std::endl;
         for (int i = 0; i < 4; i++) {
             std::cout << "    " << static_cast<SafetiesKind>(i) << ": " << safeties_flag.at(i) << std::endl;
         }
@@ -173,4 +173,4 @@ private:
     int limit;
     array<bool, 4> safeties_flag;
 };
-}  // namespace Player
+}  // namespace Driver

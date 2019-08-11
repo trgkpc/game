@@ -10,14 +10,14 @@ struct Roll : AbstCard {
         attribute = Remedies;
     }
 
-    void exe(Player::Player& user, Player::Player& target)
+    void exe(Driver::Driver& user, Driver::Driver& target)
     {
-        target.status = Player::PlayerStatus::Roll;
+        target.status = Driver::DriverStatus::Roll;
     }
 
-    bool available_this_card(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
     {
-        if (target.status == Player::PlayerStatus::Stop) {
+        if (target.status == Driver::DriverStatus::Stop) {
             return true;
         } else {
             return false;

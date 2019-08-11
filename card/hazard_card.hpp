@@ -5,24 +5,24 @@ namespace Card
 {
 struct HazardCard : AbstCard {
 public:
-    Player::PlayerStatus hazard;
-    Player::SafetiesKind safeties;
+    Driver::DriverStatus hazard;
+    Driver::SafetiesKind safeties;
 
-    HazardCard(const std::string& card_name, const Player::PlayerStatus& hazard, const Player::SafetiesKind safeties)
+    HazardCard(const std::string& card_name, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties)
         : hazard(hazard), safeties(safeties)
     {
         name = card_name;
         attribute = Hazards;
     }
 
-    void exe(Player::Player& user, Player::Player& target)
+    void exe(Driver::Driver& user, Driver::Driver& target)
     {
         target.status = hazard;
     }
 
-    bool available_this_card(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
     {
-        if ((target.status == Player::PlayerStatus::Stop || target.status == Player::PlayerStatus::Roll) && target.status != hazard && target.get_safeties_flag(safeties) == false) {
+        if ((target.status == Driver::DriverStatus::Stop || target.status == Driver::DriverStatus::Roll) && target.status != hazard && target.get_safeties_flag(safeties) == false) {
             return true;
         }
         return false;

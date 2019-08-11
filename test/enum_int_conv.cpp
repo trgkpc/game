@@ -1,11 +1,11 @@
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    using namespace Player;
-    ::Player::Player p1(1);
+    using namespace Driver;
+    ::Driver::Driver p1(1);
 
     for (int i = 0; i < 5; i++) {
         auto k = static_cast<SafetiesKind>(i);

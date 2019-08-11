@@ -1,12 +1,12 @@
 #include "../card/card.hpp"
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    Player::Player p1(1);
-    Player::Player p2(2);
+    Driver::Driver p1(1);
+    Driver::Driver p2(2);
     auto stop = Card::make_stop_card();
     auto roll = Card::Roll();
     roll(p1, p1);

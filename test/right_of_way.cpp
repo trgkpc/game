@@ -1,13 +1,13 @@
 #include "../card/card.hpp"
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    using namespace Player;
-    ::Player::Player p1(1);
-    ::Player::Player p2(2);
+    using namespace Driver;
+    ::Driver::Driver p1(1);
+    ::Driver::Driver p2(2);
     auto right_of_way = Card::make_right_of_way_card();
     auto stop = Card::make_stop_card();
 

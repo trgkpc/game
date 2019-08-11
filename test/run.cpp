@@ -1,11 +1,11 @@
 #include "../card/card.hpp"
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    Player::Player p1(1);
+    Driver::Driver p1(1);
     auto roll = Card::Roll();
     auto distance25 = Card::DistanceCard("25mile", 25);
     auto distance200 = Card::DistanceCard("200mile", 200);

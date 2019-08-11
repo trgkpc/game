@@ -10,12 +10,12 @@ struct EndOfLimit : AbstCard {
         attribute = Remedies;
     }
 
-    void exe(Player::Player& user, Player::Player& target)
+    void exe(Driver::Driver& user, Driver::Driver& target)
     {
         target.speed_limit_flag = false;
     }
 
-    bool available_this_card(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
     {
         if (target.speed_limit_flag) {
             return true;

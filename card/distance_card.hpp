@@ -11,7 +11,7 @@ struct DistanceCard : AbstCard {
         name = card_name;
     }
 
-    bool available_this_card(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
     {
         if (target.can_run(distance)) {
             return true;
@@ -19,7 +19,7 @@ struct DistanceCard : AbstCard {
         return false;
     }
 
-    void exe(Player::Player& user, Player::Player& target)
+    void exe(Driver::Driver& user, Driver::Driver& target)
     {
         target.run(distance);
     }

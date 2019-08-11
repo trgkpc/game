@@ -10,14 +10,14 @@ struct SpeedLimit : AbstCard {
         attribute = Hazards;
     }
 
-    void exe(Player::Player& user, Player::Player& target)
+    void exe(Driver::Driver& user, Driver::Driver& target)
     {
         target.speed_limit_flag = true;
     }
 
-    bool available_this_card(const Player::Player& user, Player::Player& target)
+    bool available_this_card(const Driver::Driver& user, Driver::Driver& target)
     {
-        if (target.get_safeties_flag(Player::SafetiesKind::RightOfWay) == false && !target.speed_limit_flag) {
+        if (target.get_safeties_flag(Driver::SafetiesKind::RightOfWay) == false && !target.speed_limit_flag) {
             return true;
         } else {
             return false;

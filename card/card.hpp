@@ -12,21 +12,21 @@ namespace Card
 {
 HazardCard make_accident_card()
 {
-    return HazardCard("Accident", Player::PlayerStatus::Accident, Player::SafetiesKind::DrivingAce);
+    return HazardCard("Accident", Driver::DriverStatus::Accident, Driver::SafetiesKind::DrivingAce);
 }
 
 RemediesCard make_repair_card()
 {
-    return RemediesCard("Repair", Player::PlayerStatus::Accident);
+    return RemediesCard("Repair", Driver::DriverStatus::Accident);
 }
 
 HazardCard make_stop_card()
 {
-    return HazardCard("Stop", Player::PlayerStatus::Stop, Player::SafetiesKind::RightOfWay);
+    return HazardCard("Stop", Driver::DriverStatus::Stop, Driver::SafetiesKind::RightOfWay);
 }
 
 SafetiesCard make_right_of_way_card()
 {
-    return SafetiesCard("Right Of Way", Player::SafetiesKind::RightOfWay);
+    return SafetiesCard("Right Of Way", Driver::SafetiesKind::RightOfWay);
 }
 }  // namespace Card

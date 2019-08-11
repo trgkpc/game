@@ -1,18 +1,18 @@
 #include "../card/card.hpp"
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    Player::Player p1(1);
-    Player::Player p2(2);
+    Driver::Driver p1(1);
+    Driver::Driver p2(2);
     auto repair = Card::make_repair_card();
     //    auto accident = Card::Accident();
 
     p1.print_status();
     //    accident(p2, p1);
-    p1.status = Player::PlayerStatus::Accident;
+    p1.status = Driver::DriverStatus::Accident;
     cout << "p2 used acccident card on p1" << endl;
     p1.print_status();
     cout << endl;

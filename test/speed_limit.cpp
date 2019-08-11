@@ -1,13 +1,13 @@
 #include "../card/card.hpp"
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    using namespace Player;
-    ::Player::Player p1(1);
-    ::Player::Player p2(2);
+    using namespace Driver;
+    ::Driver::Driver p1(1);
+    ::Driver::Driver p2(2);
     auto speed_limit = Card::SpeedLimit();
     auto end_of_limit = Card::EndOfLimit();
 

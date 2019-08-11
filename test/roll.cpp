@@ -1,12 +1,12 @@
 #include "../card/card.hpp"
-#include "../player/player.hpp"
+#include "../driver/driver.hpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    Player::Player p1(1);
-    Player::Player p2(2);
+    Driver::Driver p1(1);
+    Driver::Driver p2(2);
     auto roll = Card::Roll();
 
     p1.print_status();
