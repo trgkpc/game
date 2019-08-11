@@ -30,4 +30,16 @@ int main()
     cout << "d1 tried to run 200, but failed." << endl;
     d1.print_status();
     cout << endl;
+
+    auto distance_very_long = Card::DistanceCard("very long", d1.get_remaining() - 10);
+    d1.speed_limit_flag = false;
+    distance_very_long(d1, d1);
+    cout << "d1 speed limit end and runed very long" << endl;
+    d1.print_status();
+    cout << endl;
+
+    distance25(d1, d1);
+    cout << "d1 tried to run 25, but failed." << endl;
+    d1.print_status();
+    cout << endl;
 }
