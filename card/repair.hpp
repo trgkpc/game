@@ -1,10 +1,10 @@
 #pragma once
-#include "abst_remedies_card.hpp"
+#include "remedies_card.hpp"
 
 namespace Card
 {
-AbstRemediesCard make_repair_card()
+RemediesCard make_repair_card()
 {
-    return AbstRemediesCard("Repair", Player::PlayerStatus::Accident);
+    return RemediesCard("Repair", Player::PlayerStatus::Accident);
 }
 }  // namespace Card

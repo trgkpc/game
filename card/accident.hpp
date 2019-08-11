@@ -1,10 +1,10 @@
 #pragma once
-#include "abst_hazard_card.hpp"
+#include "hazard_card.hpp"
 
 namespace Card
 {
-AbstHazardCard make_accident_card()
+HazardCard make_accident_card()
 {
-    return AbstHazardCard("Accident", Player::PlayerStatus::Accident, Player::SafetiesKind::DrivingAce);
+    return HazardCard("Accident", Player::PlayerStatus::Accident, Player::SafetiesKind::DrivingAce);
 }
 }  // namespace Card
