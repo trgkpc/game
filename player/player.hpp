@@ -10,6 +10,12 @@ enum PlayerStatus {
     OutOfGas = 3,
     FlatTire = 4,
 };
+enum SafetiesKind {
+    ExtraTank = 0,
+    DrivingAce = 1,
+    RightOfWay = 2,
+    PunctureProof = 3,
+};
 
 using std::ostream;
 ostream& operator<<(ostream& os, const PlayerStatus st)
@@ -47,6 +53,7 @@ public:
     void init()
     {
         mile = 0;
+        limit = 1000;
         status = Stop;
         speed_limit_flag = false;
         extra_tank = false;
@@ -55,7 +62,6 @@ public:
         puncture_proof = false;
     }
 
-    int mile;
     int id;
     PlayerStatus status;
     bool speed_limit_flag;
@@ -65,6 +71,46 @@ public:
         std::cout << "[[Message]] player(id:" << id << ") is " << status << std::endl;
     }
 
+    void run(const int& distance)
+    {
+        mile += distance;
+    }
+
+    int get_remaining()
+    {
+        return limit - mile;
+    }
+
+    int extend()
+    {
+        limit = 1300;
+    }
+
+    bool safeties_flag(const Player::SafetiesKind& kind)
+    {
+        switch (kind) {
+        case ExtraTank:
+            return extra_tank;
+            break;
+        case DrivingAce:
+            return driving_ace;
+            break;
+        case RightOfWay:
+            return right_of_way;
+            break;
+        case PunctureProof:
+            return puncture_proof;
+            break;
+        default:
+            cerr << "[[Error]] player(id:" << id << ") has no safeties_flag Kind " << kind << endl;
+            return false;
+        }
+    }
+
+
+private:
+    int mile;
+    int limit;
     bool extra_tank;
     bool driving_ace;
     bool right_of_way;
