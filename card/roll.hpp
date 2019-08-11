@@ -9,7 +9,7 @@ struct Roll : AbstCard {
         name = std::string("Roll!!");
     }
 
-    void operator()(Player::Player& user, Player::Player& target)
+    void exe(Player::Player& user, Player::Player& target)
     {
         target.status = Player::PlayerStatus::Roll;
     }

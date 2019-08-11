@@ -9,7 +9,7 @@ struct Stop : AbstHazardCard {
         name = std::string("Stop");
     }
 
-    void operator()(Player::Player& user, Player::Player& target)
+    void exe(Player::Player& user, Player::Player& target)
     {
         target.status = Player::PlayerStatus::Stop;
     }

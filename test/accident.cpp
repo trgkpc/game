@@ -13,11 +13,11 @@ int main()
     roll(p1, p1);
 
     p1.print_status();
-    cout << "check_available(p1,p1):" << card.check_available(p1, p1) << endl;
+    cout << "check_available(p2,p1):" << card.check_available(p2, p1) << endl;
 
-    card(p1, p1);
+    card(p2, p1);
 
     p1.print_status();
     cout << "check_available(p1,p1):" << card.check_available(p1, p1) << endl;
-    cout << "check_available(p1,p2):" << card.check_available(p1, p2) << endl;
+    cout << "check_available(p2,p1):" << card.check_available(p2, p1) << endl;
 }

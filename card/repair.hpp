@@ -9,7 +9,7 @@ struct Repair : AbstCard {
         name = std::string("Repair");
     }
 
-    void operator()(Player::Player& user, Player::Player& target)
+    void exe(Player::Player& user, Player::Player& target)
     {
         target.status = Player::PlayerStatus::Stop;
     }
