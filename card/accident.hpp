@@ -3,22 +3,8 @@
 
 namespace Card
 {
-struct Accident : AbstHazardCard {
-public:
-    Accident()
-    {
-        name = std::string("Accident");
-    }
-
-    void exe(Player::Player& user, Player::Player& target)
-    {
-        target.status = Player::PlayerStatus::Accident;
-    }
-
-
-    bool safeties_flag(Player::Player& player)
-    {
-        return player.get_safeties_flag(Player::SafetiesKind::DrivingAce);
-    }
-};
+AbstHazardCard make_accident_card()
+{
+    return AbstHazardCard("Accident", Player::PlayerStatus::Accident, Player::SafetiesKind::DrivingAce);
+}
 }  // namespace Card

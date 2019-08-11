@@ -8,7 +8,7 @@ int main()
 {
     Player::Player p1(1);
     Player::Player p2(2);
-    auto accident = Card::Accident();
+    auto accident = Card::make_accident_card();
     auto roll = Card::Roll();
 
     cout << "initialized" << endl;

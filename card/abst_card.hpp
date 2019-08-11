@@ -19,6 +19,6 @@ public:
     }
 
     virtual void exe(Player::Player& user, Player::Player& target) = 0;
-    virtual bool check_available(const Player::Player& user, const Player::Player& target) = 0;
+    virtual bool check_available(const Player::Player& user, Player::Player& target) = 0;
 };
 }  //namespace Card

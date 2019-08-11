@@ -14,7 +14,7 @@ struct Roll : AbstCard {
         target.status = Player::PlayerStatus::Roll;
     }
 
-    bool check_available(const Player::Player& user, const Player::Player& target)
+    bool check_available(const Player::Player& user, Player::Player& target)
     {
         if ((user.id == target.id) && (target.status == Player::PlayerStatus::Stop)) {
             return true;

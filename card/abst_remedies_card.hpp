@@ -22,7 +22,7 @@ struct AbstRemediesCard : AbstCard {
         return player.status == Player::PlayerStatus::Accident;
     }
 
-    bool check_available(const Player::Player& user, const Player::Player& target)
+    bool check_available(const Player::Player& user, Player::Player& target)
     {
         if (user.id == target.id && target.status == target_hazard) {
             return true;
