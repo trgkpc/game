@@ -5,15 +5,17 @@ namespace Card
 {
 struct DistanceCard : AbstCard {
     int distance;
-    DistanceCard(const Kind& kind, const int distance)
-        : kind(kind), distance(distance)
+    DistanceCard(const Kind& kind_, const int distance)
+        : distance(distance)
     {
+        kind = kind_;
         attribute = Distance;
     }
 
     DistanceCard(const int distance)
-        : kind(extra_card), distance(distance)
+        : distance(distance)
     {
+        kind = extra_card;
         attribute = Distance;
     }
 

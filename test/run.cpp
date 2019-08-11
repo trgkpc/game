@@ -7,8 +7,8 @@ int main()
 {
     Driver::Driver d1(1);
     auto roll = Card::Roll();
-    auto distance25 = Card::DistanceCard("25mile", 25);
-    auto distance200 = Card::DistanceCard("200mile", 200);
+    auto distance25 = Card::make_25mile_card();
+    auto distance200 = Card::make_50mile_card();
 
     roll(d1, d1);
     cout << "d1 used roll" << endl;
@@ -31,7 +31,7 @@ int main()
     d1.print_status();
     cout << endl;
 
-    auto distance_very_long = Card::DistanceCard("very long", d1.get_remaining() - 10);
+    auto distance_very_long = Card::DistanceCard(d1.get_remaining() - 10);
     d1.speed_limit_flag = false;
     distance_very_long(d1, d1);
     cout << "d1 speed limit end and runed very long" << endl;

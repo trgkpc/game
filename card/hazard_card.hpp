@@ -8,9 +8,10 @@ public:
     Driver::DriverStatus hazard;
     Driver::SafetiesKind safeties;
 
-    HazardCard(const Kind& kind, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties)
-        : kind(kind), hazard(hazard), safeties(safeties)
+    HazardCard(const Kind& kind_, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties)
+        : hazard(hazard), safeties(safeties)
     {
+        kind = kind_;
         attribute = Hazards;
     }
 
