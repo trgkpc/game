@@ -17,12 +17,12 @@ int main()
     d1.print_status();
     cout << endl;
 
-    repair(d2, d1);
+    repair->main(d2, d1);
     cout << "d2 intended to repair d1, but failed" << endl;
     d1.print_status();
     cout << endl;
 
-    repair(d1, d1);
+    repair->main(d1, d1);
     cout << "d1 repaired d1" << endl;
     d1.print_status();
     cout << endl;

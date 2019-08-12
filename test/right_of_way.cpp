@@ -16,12 +16,12 @@ int main()
     d1.print_status();
     cout << endl;
 
-    right_of_way(d1, d1);
+    right_of_way->main(d1, d1);
     cout << "d1 used right of way card" << endl;
     d1.print_status();
     cout << endl;
 
-    stop(d2, d1);
+    stop->main(d2, d1);
     cout << "d1 intended to use stop on d1, but failed" << endl;
     d1.print_status();
     cout << endl;
