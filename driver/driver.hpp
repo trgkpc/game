@@ -12,8 +12,7 @@ enum DriverStatus {
     OutOfGas = 3,
     FlatTire = 4,
 };
-//using std::ostream;
-//ostream& operator<<(ostream& os, const DriverStatus st)
+std::ostream& operator<<(std::ostream& os, const DriverStatus st);
 
 enum SafetiesKind {
     ExtraTank = 0,
@@ -21,7 +20,7 @@ enum SafetiesKind {
     RightOfWay = 2,
     PunctureProof = 3,
 };
-//ostream& operator<<(ostream& os, const SafetiesKind& kind)
+std::ostream& operator<<(std::ostream& os, const SafetiesKind& kind);
 
 constexpr int speed_limit = 75;
 
