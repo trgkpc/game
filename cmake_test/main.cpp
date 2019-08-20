@@ -1,4 +1,4 @@
-#include "../card/gen_card.hpp"
+#include "../card/card.hpp"
 #include <iostream>
 
 int main()
