@@ -35,39 +35,12 @@ enum Kind {
     right_of_way = 18,
     extra_card = 19,
 };
+std::ostream& operator<<(std::ostream& os, const Kind& kind);
 
-using std::ostream;
-std::array<std::string, 20> names
-    = {
-        "200mile",
-        "100mile",
-        "75mile",
-        "50mile",
-        "25mile",
-        "Out Of Gas",
-        "Flat Tire",
-        "Accident",
-        "Speed Limit",
-        "Stop",
-        "Gasoline",
-        "Spare Tire",
-        "Repair",
-        "End Of Limit",
-        "Roll",
-        "Extra Tank",
-        "Puncture Proof",
-        "Driving Ace",
-        "Right Of Way",
-        "[[Extra card]]",
-};
+extern std::array<std::string, 20> names;
 inline std::string name(const Kind& kind)
 {
     return names.at(static_cast<int>(kind));
-}
-ostream& operator<<(ostream& os, const Kind& kind)
-{
-    os << name(kind);
-    return os;
 }
 
 struct AbstCard {
