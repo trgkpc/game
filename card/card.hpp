@@ -7,6 +7,7 @@
 #include "roll.hpp"
 #include "safeties_card.hpp"
 #include "speed_limit.hpp"
+#include "various_card.hpp"
 #include <array>
 #include <memory>
 

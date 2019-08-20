@@ -1,5 +1,6 @@
 #pragma once
 #include "abst_card.hpp"
+#include "card.hpp"
 #include "distance_card.hpp"
 #include "end_of_limit.hpp"
 #include "hazard_card.hpp"

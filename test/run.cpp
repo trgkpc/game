@@ -1,5 +1,6 @@
 #include "../card/card.hpp"
 #include "../driver/driver.hpp"
+#include "no_cmake_list.hpp"
 #include <iostream>
 using namespace std;
 
