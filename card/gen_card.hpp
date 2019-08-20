@@ -7,9 +7,11 @@
 #include "roll.hpp"
 #include "safeties_card.hpp"
 #include "speed_limit.hpp"
+#include <array>
 #include <memory>
 
 namespace Card
 {
 std::shared_ptr<AbstCard> make_card(int num);
+std::array<std::shared_ptr<AbstCard>, 19> make_card_array();
 }  // namespace Card
