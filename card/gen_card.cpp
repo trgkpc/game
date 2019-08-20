@@ -72,9 +72,9 @@ std::shared_ptr<AbstCard> make_card(int num)
         return std::make_shared<SafetiesCard>(right_of_way, Driver::SafetiesKind::RightOfWay);
         break;
     default:
-        return std::make_shared<AbstCard>();
         break;
     }
+    return std::make_shared<AbstCard>();
 }
 
 std::array<std::shared_ptr<AbstCard>, 19> make_card_array()
