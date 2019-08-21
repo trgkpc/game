@@ -8,11 +8,12 @@ public:
     Driver::DriverStatus hazard;
     Driver::SafetiesKind safeties;
 
-    HazardCard(const Kind& kind_, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties)
+    HazardCard(const Kind& kind_, const Driver::DriverStatus& hazard, const Driver::SafetiesKind safeties, const Kind& safety_)
         : hazard(hazard), safeties(safeties)
     {
         kind = kind_;
         attribute = Hazards;
+        correspond_safety = safety_;
     }
 
     void exe(Driver::Driver& user, Driver::Driver& target)

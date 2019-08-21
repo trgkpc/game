@@ -40,17 +40,17 @@ inline std::shared_ptr<DistanceCard> make_200mile_card()
 /***** Hazard Card ****/
 inline std::shared_ptr<HazardCard> make_out_of_gas_card()
 {
-    return std::make_shared<HazardCard>(out_of_gas, Driver::DriverStatus::OutOfGas, Driver::SafetiesKind::ExtraTank);
+    return std::make_shared<HazardCard>(out_of_gas, Driver::DriverStatus::OutOfGas, Driver::SafetiesKind::ExtraTank, extra_tank);
 }
 
 inline std::shared_ptr<HazardCard> make_flat_tire_card()
 {
-    return std::make_shared<HazardCard>(flat_tire, Driver::DriverStatus::FlatTire, Driver::SafetiesKind::PunctureProof);
+    return std::make_shared<HazardCard>(flat_tire, Driver::DriverStatus::FlatTire, Driver::SafetiesKind::PunctureProof, puncture_proof);
 }
 
 inline std::shared_ptr<HazardCard> make_accident_card()
 {
-    return std::make_shared<HazardCard>(accident, Driver::DriverStatus::Accident, Driver::SafetiesKind::DrivingAce);
+    return std::make_shared<HazardCard>(accident, Driver::DriverStatus::Accident, Driver::SafetiesKind::DrivingAce, accident);
 }
 
 inline std::shared_ptr<SpeedLimit> make_speed_limit_card()
@@ -60,7 +60,7 @@ inline std::shared_ptr<SpeedLimit> make_speed_limit_card()
 
 inline std::shared_ptr<HazardCard> make_stop_card()
 {
-    return std::make_shared<HazardCard>(stop, Driver::DriverStatus::Stop, Driver::SafetiesKind::RightOfWay);
+    return std::make_shared<HazardCard>(stop, Driver::DriverStatus::Stop, Driver::SafetiesKind::RightOfWay, right_of_way);
 }
 
 /***** Remedies Card ****/

@@ -14,6 +14,7 @@ enum Attribute {
     Extra = 4,
 };
 enum Kind {
+    nothing = -1,
     distance_200 = 0,
     distance_100 = 1,
     distance_75 = 2,
@@ -47,11 +48,13 @@ struct AbstCard {
 public:
     Kind kind;
     Attribute attribute;
+    Kind correspond_safety;
 
     AbstCard()
     {
         kind = extra_card;
         attribute = Extra;
+        correspond_safety = nothing;
     }
 
     std::string get_kind()

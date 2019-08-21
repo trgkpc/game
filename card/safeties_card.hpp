@@ -11,6 +11,7 @@ struct SafetiesCard : AbstCard {
     {
         kind = kind_;
         attribute = Safeties;
+        correspond_safety = nothing;
     }
 
     void exe(Driver::Driver& user, Driver::Driver& target)

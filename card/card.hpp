@@ -14,5 +14,4 @@
 namespace Card
 {
 std::shared_ptr<AbstCard> make_card(int num);
-std::array<std::shared_ptr<AbstCard>, 19> make_card_array();
 }  // namespace Card

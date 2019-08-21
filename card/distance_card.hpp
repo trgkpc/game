@@ -10,6 +10,7 @@ struct DistanceCard : AbstCard {
     {
         kind = kind_;
         attribute = Distance;
+        correspond_safety = nothing;
     }
 
     DistanceCard(const int distance)
@@ -17,6 +18,7 @@ struct DistanceCard : AbstCard {
     {
         kind = extra_card;
         attribute = Distance;
+        correspond_safety = nothing;
     }
 
     bool available_this_card(const Driver::Driver& user, Driver::Driver& target)

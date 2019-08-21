@@ -8,6 +8,7 @@ struct SpeedLimit : AbstCard {
     {
         kind = speed_limit;
         attribute = Hazards;
+        correspond_safety = right_of_way;
     }
 
     void exe(Driver::Driver& user, Driver::Driver& target)

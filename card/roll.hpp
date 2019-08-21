@@ -8,6 +8,7 @@ struct Roll : AbstCard {
     {
         kind = roll;
         attribute = Remedies;
+        correspond_safety = nothing;
     }
 
     void exe(Driver::Driver& user, Driver::Driver& target)

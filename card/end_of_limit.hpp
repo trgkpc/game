@@ -8,6 +8,7 @@ struct EndOfLimit : AbstCard {
     {
         kind = end_of_limit;
         attribute = Remedies;
+        correspond_safety = nothing;
     }
 
     void exe(Driver::Driver& user, Driver::Driver& target)

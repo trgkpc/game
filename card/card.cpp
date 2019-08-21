@@ -78,12 +78,4 @@ std::shared_ptr<AbstCard> make_card(int num)
     return std::make_shared<AbstCard>();
 }
 
-std::array<std::shared_ptr<AbstCard>, 19> make_card_array()
-{
-    std::array<std::shared_ptr<AbstCard>, 19> cards;
-    for (int i = 0; i < 19; i++) {
-        cards.at(i) = make_card(i);
-    }
-    return cards;
-}
 }  // namespace Card
